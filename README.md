@@ -36,3 +36,5 @@ func main() {
 }
 
 ```
+
+For Enterprise Data, use CHCaptchaTask struct for capmonster and HCaptchaTask struct for others. 
