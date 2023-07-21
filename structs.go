@@ -18,11 +18,7 @@ type HCaptchaTask struct {
 	Url               string `json:"websiteURL"`
 	SiteKey           string `json:"websiteKey"`
 	Invisble          bool   `json:"isInvisible,omitempty"`
-	ProxyType         string `json:"proxyType,omitempty"`
-	ProxyAddress      string `json:"proxyAddress,omitempty"`
-	ProxyPort         int    `json:"proxyPort,omitempty"`
-	ProxyLogin        string `json:"proxyLogin,omitempty"`
-	ProxyPassword     string `json:"proxyPassword,omitempty"`
+	Proxy             string `json:"proxy,omitempty"`
 	EnterprisePayload *struct {
 		RqData string `json:"rqdata,omitempty"`
 	} `json:"enterprisePayload,omitempty"`
