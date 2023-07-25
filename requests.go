@@ -33,7 +33,13 @@ func (in *Instance) CreateTask(Task interface{}) error {
 	}
 
 	if Response["errorId"].(float64) != 0 {
-		return fmt.Errorf("%v", Response["errorId"])
+		return fmt.Errorf("Could not create task, Error: %v", func() string {
+			if strings.Contains(in.Service, "capmonster") {
+				return Response["errorId"].(string)
+			}
+
+			return Response["errorDescription"].(string)
+		}())
 	}
 
 	in.TaskId = fmt.Sprintf("%v", Response["taskId"])
